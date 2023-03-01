@@ -1,0 +1,59 @@
+@use '../abstracts' as *;
+
+.demo{
+    margin: 15rem 0;
+    padding: 0 10rem;
+    position: relative;
+
+    &__bg{
+        width: 60%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        object-fit: contain;
+        opacity: 0.02;
+
+        @media screen and (max-width: 1100px){
+            display: none;
+        }
+    }
+
+    &__grid{
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 6rem;
+
+        &__item{
+            > img{
+                width: 40rem;
+                height: 45rem;
+                object-fit: contain;
+                
+                @media screen and (max-width: 1100px){
+                    display: none;
+                }
+            }
+
+            &__title{
+                font-size: 5rem;
+                font-weight: map-get($font-weights , heavy);
+                line-height: 1.2;
+                margin-bottom: 4rem;
+            }
+        }
+
+        @media screen and (max-width: 1100px){
+            display: block;
+        }
+    }
+
+    @media screen and (max-width: 935px){
+        padding: 6rem;
+    }
+
+    @media screen and (max-width: 500px){
+        padding: 4rem;
+    }
+}

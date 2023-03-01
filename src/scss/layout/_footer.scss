@@ -1,0 +1,51 @@
+@use '../abstracts' as *;
+
+.footer{
+    background-color: $dark;
+    padding: 8rem 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+
+    &__item{
+        &__brand{
+            font-size: 3rem;
+            font-weight: map-get($font-weights, heavy);
+            color: $white;
+            margin-bottom: 2rem;
+
+            span{
+                color: $secondary-color;
+            }
+        }
+
+        &__title{
+            font-size: 1.8rem;
+            color: $white;
+            font-weight: map-get($font-weights, semi-bold);
+            margin-bottom: 2rem;
+        }
+
+        &__text{
+            font-size: 1.4rem;
+            color: $white;
+        }
+
+        ul > li {
+            font-size: 1.4rem;
+            color: $white;
+
+            &:not(:last-child){
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    @media screen and (max-width: 935px){
+        padding: 6rem;
+    }
+
+    @media screen and (max-width: 500px){
+        padding: 4rem;
+    }
+}

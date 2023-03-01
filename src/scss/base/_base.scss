@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $font-primary;
+    line-height: 1.7;
+    color: $primary-color;
+    font-weight: map-get($font-weights, regular);
+    background-color: $light-gray;
+}
+
+p{
+    font-size: 1.8rem;
+}
+
+a {
+    color: $primary-color;
+    text-decoration: none;
+}
+
+img{
+    display: block;
+}
+
+button {
+    font-family: $font-primary;
+    font-size: 1.5rem;
+}
+
+ul {
+    list-style: none;
+}
