@@ -22,3 +22,56 @@ AOS.init({
   mirror: false, // whether elements should animate out while scrolling past them
   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 });
+
+//@: Utility function that takes in a HTML element
+//@: and scrolls to the starting point of that element.
+const goTo = (el) => {
+  if(el){
+    el.scrollIntoView({
+      behavior: "auto",
+      block: "start",
+      inline: "nearest"
+    });
+  }
+  else console.error("Element not found.")
+}
+
+//@: Select the hero button
+const heroButton = document.querySelector('.--hero');
+
+//@: Select the necessary sections
+const heroSection = document.querySelector('.hero');
+const demoSection = document.querySelector('.demo');
+const aboutSection = document.querySelector('.about');
+const contactSection = document.querySelector('.contact');
+
+//@: Select all nav links on the header
+const navLinks = document.querySelectorAll('.header__nav__list > li');
+navLinks.forEach((link) => {
+  link.addEventListener('click', function (e){
+    e.preventDefault();
+    
+    switch(link.id){
+      case "home":
+        goTo(heroSection);
+        break;
+      case "about":
+        goTo(aboutSection);
+        break;
+      case "demo":
+        goTo(demoSection);
+        break;
+      case "contact":
+        goTo(contactSection);
+      default:
+        console.log("Did not execute")
+        break;
+    }
+  })
+});
+
+//@: Hero button click event listener
+heroButton.addEventListener('click', function (e) {
+  e.preventDefault();
+  goTo(contactSection)
+});
