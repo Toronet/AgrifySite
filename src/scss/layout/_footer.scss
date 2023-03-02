@@ -27,6 +27,7 @@
         }
 
         &__text{
+            width: min(30rem, 100%);
             font-size: 1.4rem;
             color: $white;
         }
@@ -34,6 +35,11 @@
         ul > li {
             font-size: 1.4rem;
             color: $white;
+            cursor: pointer;
+
+            a{
+                color: $white;
+            }
 
             &:not(:last-child){
                 margin-bottom: 1rem;

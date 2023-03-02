@@ -70,6 +70,30 @@ navLinks.forEach((link) => {
   })
 });
 
+//@: Select all list items on the footer
+const footerLinks = document.querySelectorAll('.footer__item__list > li');
+footerLinks.forEach((link) => {
+  link.addEventListener('click', function (e){
+    e.preventDefault();
+    switch(link.id){
+      case "home":
+        goTo(heroSection);
+        break;
+      case "about":
+        goTo(aboutSection);
+        break;
+      case "demo":
+        goTo(demoSection);
+        break;
+      case "contact":
+        goTo(contactSection);
+      default:
+        console.log("Did not execute")
+        break;
+    }
+  })
+});
+
 //@: Hero button click event listener
 heroButton.addEventListener('click', function (e) {
   e.preventDefault();
